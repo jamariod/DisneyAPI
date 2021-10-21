@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kG4-yi-vO2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DisneyAPI-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DisneyCharacterViewController" customModule="DisneyAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="La3-S5-saQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qtK-jx-3AT">
+                                <rect key="frame" x="0.0" y="139" width="414" height="757"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="disneyCell" rowHeight="170" id="lka-FQ-0DX" customClass="DisneyCharactersCell" customModule="DisneyAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lka-FQ-0DX" id="k8k-lH-TId">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tTv-fG-W7I">
+                                                    <rect key="frame" x="256" y="11" width="150" height="147.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="UfQ-Vc-0gp"/>
+                                                        <constraint firstAttribute="width" constant="150" id="i53-80-izl"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olu Mel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGD-Fj-fcf">
+                                                    <rect key="frame" x="8" y="10" width="240" height="30"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tTv-fG-W7I" firstAttribute="leading" secondItem="iGD-Fj-fcf" secondAttribute="trailing" constant="8" id="Q10-ho-cC7"/>
+                                                <constraint firstItem="iGD-Fj-fcf" firstAttribute="leading" secondItem="k8k-lH-TId" secondAttribute="leading" constant="8" id="fdK-9R-gfn"/>
+                                                <constraint firstItem="tTv-fG-W7I" firstAttribute="centerY" secondItem="k8k-lH-TId" secondAttribute="centerY" id="hDT-yY-efB"/>
+                                                <constraint firstItem="iGD-Fj-fcf" firstAttribute="top" secondItem="tTv-fG-W7I" secondAttribute="top" id="lGp-Zj-5xE"/>
+                                                <constraint firstAttribute="trailing" secondItem="tTv-fG-W7I" secondAttribute="trailing" constant="8" id="sJr-Up-qqi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="disneyCharacterNameLabel" destination="iGD-Fj-fcf" id="lxD-6U-6S5"/>
+                                            <outlet property="disneyImageView" destination="tTv-fG-W7I" id="vk9-XV-bmQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qtK-jx-3AT" firstAttribute="top" secondItem="La3-S5-saQ" secondAttribute="bottom" id="3Md-Lw-EVn"/>
+                            <constraint firstItem="qtK-jx-3AT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="87a-fa-e0l"/>
+                            <constraint firstItem="qtK-jx-3AT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8ml-yy-5h1"/>
+                            <constraint firstItem="La3-S5-saQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="AUc-p7-E8W"/>
+                            <constraint firstAttribute="bottom" secondItem="qtK-jx-3AT" secondAttribute="bottom" id="NFU-Fx-q2v"/>
+                            <constraint firstItem="La3-S5-saQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q6z-nP-Oy0"/>
+                            <constraint firstItem="La3-S5-saQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WUH-ZL-VwR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="DisneyAPI" id="fau-G0-syG"/>
+                    <connections>
+                        <outlet property="searchBar" destination="La3-S5-saQ" id="xSl-OS-r7N"/>
+                        <outlet property="tableView" destination="qtK-jx-3AT" id="UNn-Cb-QDY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="71.651785714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SSz-SH-sGC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kG4-yi-vO2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GT9-R5-aTl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="190-IY-Cpf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4a-Mt-paR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
